@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Curso</h1>
+
+<form action="/curso" enctype="multipart/form-data" method="post">
+    <div><label>Nome:</label></div>
+    <div><input type="text" name="nome"/></div>
+    <div><label>Períodos:</label></div>
+    <div><input type="text" name="periodos"/></div>
+    <div><label>Semestral:</label></div>
+    <div><input type="checkbox" name="semestral"/></div>
+    
+    <div><input type="submit" value="Adicionar"></div>
+</form>
+
+<h1>Cursos</h1>
+<table>
+    <tr>
+        <th>Nome</th>
+        <th>Períodos</th>
+        <th>Semestral</th>
+    </tr>
+    {% for professor in professores %}
+        <tr>
+            <td>{{curso.nome}}</td>
+            <td>{{curso.periodos}}</td>
+            <td>{{curso.semestral}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}
